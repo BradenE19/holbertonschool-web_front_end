@@ -1,10 +1,9 @@
 /*Sass file assigns text color*/
+$color: #3D3D3D;
 body {
-    color: #3D3D3D;
-
-    body > .red {
-        :first-child {
-            color: #FF0000;
-        }
+    color: $color;
+    > .red {
+        $color: #FF0000;
+        color: $color;
     }
 }
