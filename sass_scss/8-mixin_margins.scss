@@ -1,0 +1,7 @@
+/*Sass file assigns mixin margins*/
+@mixin marg($marg) {
+    margin-left: $marg;
+    margin-right: $marg;
+}
+body {@include marg(10px);}
+div {@include marg(15px);}
