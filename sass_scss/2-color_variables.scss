@@ -1,0 +1,5 @@
+/*Sass file that assigns text color #3D3D3D to the HTML tags body and p, background color #6D6D6D to the HTML tags body and h2*/
+$color: #3D3D3D
+$background-color: #6D6D6D;
+body, p {color: $color}
+body, h2 {background-color: $background-color}
