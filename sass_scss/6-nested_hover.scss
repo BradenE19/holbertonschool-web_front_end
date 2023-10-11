@@ -1,0 +1,9 @@
+/*Sass file assigns text color*/
+$color: #FF0000;
+button {
+    color: $color;
+    &:hover {
+        $color: #00FF00;
+        color: $color;
+    }
+}
