@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Task 11</title>
+    <title>Task 12</title>
     <style>
     </style>
   </head>
@@ -16,10 +16,25 @@
       const addPostRow = (data) => {
         const { id, title, author } = data
         $("body").append(
-          "<p>" +
-            "<span>" +
+          '<p id="row-${id}">' +
+            "<span class='delete'>(delete)" +
+              "</span" +
             `Post created with id ${id}, title: ${title}, author: ${author}`
         )
+        $('#row-${id}.delete').click(function(){
+          deletePost(id)
+        })
+      }
+
+      const deletePost = (id) => {
+        $.ajax({
+          type: "DELETE",
+          url: `http://localhost:3000/posts/${id}`,
+          success: () => {
+            $(`#${id}`).parent("p").remove()
+          },
+        }).fail(() => console.log("Post was not deleted"))
+        $(this).parent("p").remove()
       }
 
       const listPosts = () => {
