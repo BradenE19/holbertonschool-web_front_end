@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Task 5</title>
+  <title>Task 6</title>
 </head>
 <body>
   <script type="application/javascript">
     const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
     function addItemToCart(item) {
-      localStorage.setItem(item, true);
+      sessionStorage.setItem(item, true);
     }
     function createStore() {
       const list = document.createElement('ul');
@@ -22,7 +22,7 @@
       document.body.appendChild(list);
     }
     function displayCart () {
-      const existProducts = Object.keys(localStorage);
+      const existProducts = Object.keys(sessionStorage);
       const countProducts = existProducts.length;
       if (existProducts) {
         const paragraph = document.createElement('p');
@@ -30,7 +30,7 @@
         document.body.appendChild(paragraph);
       }
     }
-    if (typeof(localStorage) !== 'undefined') {
+    if (typeof(sessionStorage) !== 'undefined') {
       createStore();
       displayCart();
     } else {
